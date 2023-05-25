@@ -35,6 +35,7 @@ exports.createOrder = async (req, res) => {
 exports.getOrder = async (req, res) => {
   try {
     await Order.find()
+      .populate({ path: "user" })
       .sort({ $natural: -1 })
       .then((order) => res.status(200).json(order))
       .catch((error) => res.status(400).json(error));
@@ -116,4 +117,3 @@ exports.deleteOrder = async (req, res) => {
     }
   }
 };
-
