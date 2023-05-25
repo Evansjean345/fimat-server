@@ -51,6 +51,7 @@ exports.getOneOrder = async (req, res) => {
   } else {
     try {
       await Order.findById({ _id: req.params.id })
+      .populate({ path: "user" })
         .then((order) => res.status(200).json(order))
         .catch((error) => res.status(400).json(`ID unknown : ${error}`));
     } catch (error) {
