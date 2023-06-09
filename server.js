@@ -11,7 +11,7 @@ const UserRoutes = require("./routes/user");
 const OrderRoutes = require("./routes/order");
 const { checkUser, requireAuth } = require("./middleware/auth");
 
-app.get("/", (req, res) => res.send("Welcome to Fimat Group Api"));
+app.get("/", (req, res) => res.sendFile(__dirname + `/pages/index.html`));
 
 app.listen(process.env.PORT || port, () => {
   console.log(`Example app listening on port ${port}!`);

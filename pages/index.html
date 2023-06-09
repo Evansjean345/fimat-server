@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="input.css" />
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.0.22/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body class="p-0">
+    <header class="bg-red-100 h-full">
+      <div class="flex w-full">
+        <div class="w-1/3">
+          <img src="images/logo.png" alt="" class="sm:h-40 bg-white" />
+        </div>
+        <div class="w-2/3 flex items-center justify-center">
+          <h1
+            class="sm:text-5xl py-8 px-8 sm:px-16 text-xl flex text-center font-thin"
+          >
+            Application Programming interface
+          </h1>
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class="flex flex-wrap flex-col sm:flex-row mt-12">
+        <div
+          class="sm:w-1/2 h-full p-12 w-full flex items-center justify-center flex-col"
+        >
+          <h3 class="sm:text-3xl text-lg underline">Commencer</h3>
+          <p class="flex text-center py-6">
+            Introduction :
+  <br>
+  <br>
+            Bienvenue dans la documentation de l'API de livraison du groupe Fimat. Notre API vous permet de créer et gérer des utilisateurs, à la fois des comptes administrateurs et des comptes clients, ainsi que de gérer les livraisons. Cette puissante interface de programmation vous offre un contrôle complet sur les processus de création de comptes et de gestion des livraisons, en vous fournissant les outils nécessaires pour simplifier et automatiser ces tâches.
+            <br>
+            <br>
+            Création d'utilisateurs :
+            <br>
+            <br>
+L'API de livraison vous permet de créer facilement des utilisateurs sur le compte administrateur et le compte client. Vous pouvez utiliser les fonctions dédiées pour créer des comptes administrateurs dotés de privilèges spécifiques, ainsi que des comptes clients qui bénéficieront des fonctionnalités de livraison.
+<br>
+<br>
+Gestion des livraisons :
+Avec notre API, vous pouvez créer des livraisons en spécifiant le jour et la date souhaités. Chaque livraison est automatiquement associée à un numéro aléatoire unique, vous permettant de suivre et d'identifier facilement les envois. De plus, vous avez la possibilité de fixer l'état de la livraison, en indiquant si elle est validée ou non.
+Notre API de livraison offre une interface conviviale et des fonctions puissantes pour simplifier votre flux de travail. Que vous souhaitiez créer des utilisateurs, gérer les livraisons ou suivre l'état des envois, notre API est conçue pour répondre à vos besoins. Que vous développiez une application de livraison ou que vous cherchiez simplement à automatiser vos processus internes, notre API de livraison est là pour vous accompagner.
+<br>
+<br>
+N'hésitez pas à consulter la documentation détaillée ci-dessous pour découvrir toutes les fonctionnalités offertes par notre API de livraison du groupe Fimat.
+          </p>
+        </div>
+        <div class="sm:w-1/2 w-full sm:px-0 px-8 h-full flex items-center justify-center">
+          <div class="mockup-code">
+            <pre
+          ><code class="px-1">METHOD : GET</code>
+            <pre
+              data-prefix="1"
+              class="flex gap-1"
+            ><code class="bg-blue-700  px-1">CURL :</code>
+          <code>https://fimat-group-api.onrender.com/user</code>
+        </pre>
+            <br />
+            <pre data-prefix="2"><code>{
+                "_id": "6475c059b305b3bc5ea76234",
+                "name": "test",
+                "lastname": "test",
+                "username": "test",
+                "phone": "1414141412",
+                "email": "test@ff.ff",
+                "imgUrl": null, // renvoi null si n'y a pas d'image
+                "orders": [
+                    "6475d7eab305b3bc5ea7628e",
+                    "64761644b305b3bc5ea76328",
+                    "6476164ab305b3bc5ea7632b",
+                    "64762210b305b3bc5ea763ea",
+                    "6476295db305b3bc5ea76452",
+                    "6477302cb305b3bc5ea7650c"
+                ],
+                "date": "Tue, 30 May 2023 09:22:33 GMT",
+                "isAdmin": false,
+                "__v": 0
+            }</code></pre>
+            <pre
+              data-prefix="3"
+              class="bg-success text-warning-content"
+            ><code>Exemple d'un utilisateur</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+        <div class="flex flex-wrap flex-col sm:flex-row mt-12">
+          <div
+            class="sm:w-1/2 h-full p-12 w-full flex items-center justify-center flex-col"
+          >
+            <h3 class="sm:text-3xl text-lg underline"> Utilisation de la section de création d'utilisateurs :</h3>
+            <p class="flex text-center py-6">
+                Pour créer un utilisateur à l'aide de notre API de livraison du groupe Fimat, vous devez fournir les informations suivantes :
+                <br><br>
+                "name" : Ce champ est de type chaîne de caractères et est obligatoire. Il doit contenir un nom valide de l'utilisateur, compris entre 3 et 55 caractères. Les espaces en début et en fin de chaîne seront automatiquement supprimés.
+                <br>
+                "lastname" : Ce champ est de type chaîne de caractères et est obligatoire. Il doit contenir le nom de famille de l'utilisateur, avec une longueur comprise entre 3 et 55 caractères. Les espaces en début et en fin de chaîne seront automatiquement supprimés.
+                <br>
+                "username" : Ce champ est de type chaîne de caractères et est obligatoire. Il doit contenir un nom d'utilisateur unique pour l'utilisateur. Les lettres en majuscules seront converties en minuscules. La longueur du nom d'utilisateur doit être comprise entre 3 et 55 caractères. Les espaces en début et en fin de chaîne seront automatiquement supprimés.
+                <br>
+                "phone" : Ce champ est de type chaîne de caractères et est obligatoire. Il doit contenir le numéro de téléphone de l'utilisateur. Ce numéro de téléphone doit être unique parmi tous les utilisateurs.
+                <br>
+                "email" : Ce champ est de type chaîne de caractères et est obligatoire. Il doit contenir l'adresse e-mail de l'utilisateur. L'adresse e-mail doit être unique parmi tous les utilisateurs. De plus, elle sera automatiquement convertie en minuscules et validée pour s'assurer qu'elle est au bon format.
+                <br>
+                "password" : Ce champ est de type chaîne de caractères et est obligatoire. Il doit contenir le mot de passe de l'utilisateur. La longueur du mot de passe doit être comprise entre 3 et 55 caractères. Les espaces en début et en fin de chaîne seront automatiquement supprimés.
+                <br>
+                "imgUrl" : Ce champ est de type chaîne de caractères et est facultatif. Il peut contenir une URL d'image représentant l'utilisateur.
+                <br>
+                "orders" : Ce champ est une liste d'identifiants d'objets de type Order. Il permet de faire référence aux commandes associées à cet utilisateur.
+                <br>
+                "date" : Ce champ est de type chaîne de caractères. Il peut contenir la date d'inscription de l'utilisateur.
+                <br>
+                "isAdmin" : Ce champ est de type booléen et a une valeur par défaut de false. Il indique si l'utilisateur est un administrateur ou non.
+                <br><br>
+                Assurez-vous de respecter les contraintes de longueur et de format pour chaque champ, le cas échéant, afin de créer avec succès un utilisateur à l'aide de notre API de livraison.
+            </p>
+          </div>
+          <div class="sm:w-1/2 w-full sm:px-0 px-8 h-full flex items-center justify-center">
+            <div class="mockup-code">
+              <pre
+            ><code class="px-1">METHOD : POST</code>
+              <pre
+                data-prefix="1"
+                class="flex gap-1"
+              ><code class="bg-blue-700  px-1">CURL :</code>
+            <code>https://fimat-group-api.onrender.com/user</code>
+          </pre>
+              <pre data-prefix="2"><code>{
+                name: {
+                  type: String,
+                  required: true,
+                  minLenght: 3,
+                  maxLenght: 55,
+                  trim: true,
+                },
+                lastname: {
+                  type: String,
+                  required: true,
+                  minLenght: 3,
+                  maxLenght: 55,
+                  trim: true,
+                },
+                username: {
+                  type: String,
+                  unique: true,
+                  required: true,
+                  lowercase: true,
+                  minLenght: 3,
+                  maxLenght: 55,
+                  trim: true,
+                },
+                phone: { type: String, required: true, unique: true },
+                email: {
+                  type: String,
+                  required: true,
+                  unique: true,
+                  lowercase: true,
+                  validate: [isEmail],
+                  trim: true,
+                },
+                password: {
+                  type: String,
+                  required: true,
+                  minLenght: 3,
+                  maxLenght: 55,
+                  trim: true,
+                },
+                imgUrl: { type: String },
+                orders: [{ type: mongoose.Schema.Types.ObjectId, ref: "Order" }],
+                date: { type: String },
+                isAdmin: { type: Boolean, default: false },
+              }</code></pre>
+              <pre
+                data-prefix="3"
+                class="bg-success text-warning-content"
+              ><code>créer un utilisateur</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="flex flex-wrap flex-col sm:flex-row mt-12">
+          <div
+            class="sm:w-1/2 h-full p-12 w-full flex items-center justify-center flex-col"
+          >
+            <h3 class="sm:text-3xl text-lg underline">Gestion de livraion</h3>
+            <p class="flex text-center py-6">
+              Obtenir une livraion
+    <br>
+    <br>
+    La méthode GET de notre API de livraison du groupe Fimat vous permet d'obtenir les détails d'une livraison spécifique. En utilisant cette méthode, vous pouvez récupérer toutes les informations associées à une livraison, telles que la date, l'heure, le numéro de livraison et l'état de validation.
+            </p>
+          </div>
+          <div class="sm:w-1/2 w-full sm:px-0 px-8 h-full flex items-center justify-center">
+            <div class="mockup-code">
+              <pre
+            ><code class="px-1">METHOD : GET</code>
+              <pre
+                data-prefix="1"
+                class="flex gap-1"
+              ><code class="bg-blue-700  px-1">CURL :</code>
+            <code>https://fimat-group-api.onrender.com/order</code>
+          </pre>
+              <br />
+              <pre data-prefix="2"><code>{
+                "recipient": {
+                  "name": "John Doe",
+                  "phone": "0123456789",
+                  "address": "123 Rue de l'Example"
+                },
+                "destination": "Destination Example",
+                "payement": "Payment Example",
+                "totalCost": "100",
+                "status": true,
+                "invoiceStatus": false,
+                "tracking": "TRACK12345",
+                "packs": "Packs Example",
+                "goods_price": "50",
+                "reception": "Reception Example",
+                "comments": "Comments Example",
+                "transport": "Transport Example",
+                "orderUrl": "http://example.com/order",
+                "delivery_day": "2023-06-09",
+                "delivery_hours": "9 AM - 12 PM",
+                "user": "user12345",
+                "date": "2023-06-08T18:30:00.000Z"
+              }
+              </code></pre>
+              <pre
+                data-prefix="3"
+                class="bg-success text-warning-content"
+              ><code>Exemple de l'obtention d'une livraion</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="flex flex-wrap flex-col sm:flex-row mt-12">
+          <div
+            class="sm:w-1/2 h-full p-12 w-full flex items-center justify-center flex-col"
+          >
+            <h3 class="sm:text-3xl text-lg underline">Créer une livraison</h3>
+            <p class="flex text-center py-6">
+              Créer une livraison
+    <br>
+    <br>
+    Dans cet exemple, vous devez fournir toutes les informations requises pour créer une nouvelle livraison. Voici une description de chaque champ utilisé dans la requête :
+    <br>
+    <br>
+    "recipient" : Contient les informations sur le destinataire, y compris son nom, son numéro de téléphone et son adresse.
+    <br>
+    "destination" : La destination de la livraison.
+    <br>
+    "payment" : Le mode de paiement utilisé pour la livraison.
+    <br>
+    "totalCost" : Le coût total de la livraison.
+    <br>
+    "status" : Le statut de la livraison (true pour activé, false pour désactivé).
+    <br>
+    "invoiceStatus" : Le statut de la facture de la livraison (true pour activé, false pour désactivé).
+    <br>
+    "tracking" : Le code de suivi de la livraison.
+    <br>
+"packs" : Les colis associés à la livraison.
+<br>
+"goods_price" : Le prix des articles à livrer.
+<br>
+"reception" : Les détails sur la réception de la livraison.
+<br>
+"comments" : Tout commentaire supplémentaire sur la livraison.
+<br>
+"transport" : Le mode de transport utilisé pour la livraison.
+<br>
+"orderUrl" : L'URL de la commande.
+<br>
+"delivery_day" : La date de livraison prévue.
+<br>
+"delivery_hours" : Les heures de livraison prévues.
+<br>
+"user" : L'identifiant de l'utilisateur associé à la livraison.
+<br>
+"date" : La date de création de la livraison.
+<br>
+<br>
+Assurez-vous de remplir correctement chaque champ avec les valeurs appropriées dans le corps de la requête pour créer une nouvelle livraison.
+            </p>
+          </div>
+          <div class="sm:w-1/2 w-full sm:px-0 px-8 h-full flex items-center justify-center">
+            <div class="mockup-code">
+              <pre
+            ><code class="px-1">METHOD : POST</code>
+              <pre
+                data-prefix="1"
+                class="flex gap-1"
+              ><code class="bg-blue-700  px-1">CURL :</code>
+            <code>https://fimat-group-api.onrender.com/order</code>
+          </pre>
+              <br />
+              <pre data-prefix="2"><code>{
+                recipient: {
+                  name: { type: String, required: true, minLenght: 3, maxLenght: 55 },
+                  phone: { type: String, required: true, minLenght: 3, maxLenght: 55 },
+                  address: { type: String, required: true, minLenght: 3, maxLenght: 55 },
+                },
+                destination: {
+                  type: String,
+                  required: true,
+                  minLenght: 3,
+                  maxLenght: 55,
+                },
+                payement: {
+                  type: String,
+                  required: true,
+                  minLenght: 3,
+                  maxLenght: 55,
+                },
+                totalCost: {
+                  type: String,
+                  minLenght: 3,
+                  maxLenght: 55,
+                },
+                status: {
+                  type: Boolean,
+                  default: false,
+                },
+                invoiceStatus: {
+                  type: Boolean,
+                  default: false,
+                },
+                tracking: {
+                  type: String,
+                },
+                packs: { type: String, required: true },
+                goods_price: { type: String, required: true },
+                reception: { type: String, required: true },
+                comments: { type: String, required: true },
+                transport: { type: String, required: true },
+                orderUrl: { type: String },
+                delivery_day: { type: String },
+                delivery_hours: { type: String, required: true },
+                user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+                date: {
+                  type: String,
+                },
+              }
+              </code></pre>
+              <pre
+                data-prefix="3"
+                class="bg-success text-warning-content"
+              ><code>Exemple de création d'une livraion</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="flex flex-wrap flex-col sm:flex-row mt-12">
+          <div
+            class="sm:w-1/2 h-full p-12 w-full flex items-center justify-center flex-col"
+          >
+            <h3 class="sm:text-3xl text-lg underline">Authentification</h3>
+            <p class="flex text-center py-6">
+                Pour vous connecter à votre compte, vous pouvez utiliser l'API de connexion fournie. Voici comment procéder :
+    <br>
+    <br>
+    Après la connexion, vous pouvez utiliser l'identifiant de l'utilisateur et le jeton pour accéder aux fonctionnalités protégées de l'API. Assurez-vous de conserver le jeton en toute sécurité et de l'inclure dans les en-têtes ou les cookies des requêtes ultérieures pour prouver votre authentification.
+<br>
+Notez que le jeton a une durée de validité de 3 jours (expiresIn: "3d") et est signé avec une clé secrète ("RANDOM_TOKEN_SECRET"). Assurez-vous de prendre en compte cette expiration et de gérer les renouvellements de jetons si nécessaire.
+<br>
+En cas d'erreur, vous recevrez une réponse avec un code d'état approprié (par exemple, 401 pour une identification incorrecte) et un message d'erreur correspondant.
+<br>
+N'oubliez pas de gérer les erreurs potentielles lors de la connexion, telles que l'utilisateur introuvable dans la base de données ou un mot de passe incorrect. En cas d'erreur serveur, vous recevrez une réponse avec un code d'état 500 et un message d'erreur générique.
+<br>
+Assurez-vous de fournir les informations d'identification correctes dans le corps de la requête pour vous connecter avec succès à votre compte.   
+            </p>
+          </div>
+          <div class="sm:w-1/2 w-full sm:px-0 px-8 h-full flex items-center justify-center">
+            <div class="mockup-code">
+              <pre
+            ><code class="px-1">METHOD : POST</code>
+              <pre
+                data-prefix="1"
+                class="flex gap-1"
+              ><code class="bg-blue-700  px-1">CURL :</code>
+            <code>https://fimat-group-api.onrender.com/login</code>
+          </pre>
+              <br />
+              <pre data-prefix="2">
+                <code class="">Endpoint : /login - Corps de la requête :</code>
+                <br>
+                <code>{
+                    "username": "votre_nom_d'utilisateur", 
+                    "email": "votre_email",
+                    "password": "votre_mot_de_passe"
+                  }</code></pre>
+              <pre
+                data-prefix="3"
+                class="bg-success text-warning-content"
+              ><code>Réponse : status200</code>
+              <br>
+              <code>
+                {
+                    "userId": "votre_identifiant_utilisateur",
+                    "token": "votre_token"
+                  }
+              </code>
+            </pre>
+            </div>
+          </div>
+        </div>
+      </section>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </body>
+</html>
