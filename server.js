@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 4000;
+const port = 5000;
 require("dotenv").config({ path: "./config/.env" });
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
